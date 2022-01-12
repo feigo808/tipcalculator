@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TipCalculatorApp</string>
+    <string name="price">Bill Amount : $</string>
+    <string name="tip">Tip : %</string>
+    <string name="person">Divide By :</string>
+    <string name="percent">%</string>
+    <string name="hint_price">Bill Price</string>
+    <string name="clear">Clear</string>
+    <string name="calculate">Calculate</string>
+    <string name="round_up">Round Up :</string>
+    <string name="hint_person">how many people?</string>
+    <string name="hint_roundUp">to whole dollars?</string>
+    <string name="answer_tip">Tip Total :</string>
+    <string name="answer_each_person">Tip Each Person :</string>
+    <string name="answer_total">Total (Bill + Tip) :</string>
+    <string name="answer_total_each">Total Each Person :</string>
+</resources>

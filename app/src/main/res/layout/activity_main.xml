@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_28"
+        android:layout_marginTop="@dimen/margin_32"
+        android:text="@string/price"
+        android:textSize="@dimen/textSize_20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_12"
+        android:layout_marginTop="@dimen/margin_28"
+        android:ems="8"
+        android:hint="@string/hint_price"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tv_price"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginTop="@dimen/margin_32"
+        android:text="@string/tip"
+        android:textSize="@dimen/textSize_20"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+    <SeekBar
+        android:id="@+id/sb_tip"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tip"
+        app:layout_constraintStart_toEndOf="@+id/tv_tip" />
+
+    <TextView
+        android:id="@+id/tv_tip_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_28"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/percent"
+        android:textSize="@dimen/textSize_20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/sb_tip"
+        app:layout_constraintTop_toBottomOf="@+id/sb_tip"
+        tools:text="0%" />
+
+    <TextView
+        android:id="@+id/tv_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/person"
+        android:textSize="@dimen/textSize_20"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tip_percentage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_person"
+        app:layout_constraintEnd_toEndOf="@+id/tv_person"
+        app:layout_constraintTop_toBottomOf="@+id/tv_person" />
+
+    <EditText
+        android:id="@+id/et_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_12"
+        android:layout_marginTop="@dimen/margin_8"
+        android:ems="3"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/tv_person"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tip_percentage" />
+
+    <TextView
+        android:id="@+id/tv_roundup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32"
+        android:text="@string/round_up"
+        android:textSize="@dimen/textSize_20"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_person" />
+
+    <CheckBox
+        android:id="@+id/cb_roundup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_12"
+        android:layout_marginTop="@dimen/margin_12"
+        app:layout_constraintStart_toEndOf="@+id/tv_roundup"
+        app:layout_constraintTop_toBottomOf="@+id/et_person" />
+
+    <Button
+        android:id="@+id/bt_calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_52"
+        android:layout_marginTop="@dimen/margin_48"
+        android:text="@string/calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_roundup" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_60"
+        android:text="@string/clear"
+        app:layout_constraintStart_toEndOf="@+id/bt_calculate"
+        app:layout_constraintTop_toTopOf="@+id/bt_calculate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_roundUp"
+        app:layout_constraintStart_toStartOf="@+id/tv_roundup"
+        app:layout_constraintTop_toBottomOf="@+id/tv_roundup" />
+
+    <View
+        android:id="@+id/group_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="@dimen/margin_24"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_calculate" />
+
+    <TextView
+        android:id="@+id/answer_label_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginTop="@dimen/margin_24"
+        android:text="@string/answer_tip"
+        android:textSize="@dimen/textSize_20"
+        app:layout_constraintEnd_toEndOf="@+id/answer_label_each_total"
+        app:layout_constraintTop_toBottomOf="@+id/group_divider" />
+
+    <TextView
+        android:id="@+id/answer_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_24"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_24"
+        app:layout_constraintStart_toEndOf="@+id/answer_label_tip"
+        app:layout_constraintTop_toBottomOf="@+id/group_divider"
+        tools:text="$ 9" />
+
+    <TextView
+        android:id="@+id/answer_label_each_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginTop="@dimen/margin_24"
+        android:text="@string/answer_each_person"
+        android:textSize="@dimen/textSize_20"
+        app:layout_constraintEnd_toEndOf="@+id/answer_label_total"
+        app:layout_constraintTop_toBottomOf="@+id/answer_label_tip" />
+
+    <TextView
+        android:id="@+id/answer_each_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_24"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_24"
+        app:layout_constraintStart_toEndOf="@+id/answer_label_each_person"
+        app:layout_constraintTop_toBottomOf="@+id/answer_label_tip"
+        tools:text="$ 3" />
+
+    <TextView
+        android:id="@+id/answer_label_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginTop="@dimen/margin_24"
+        android:text="@string/answer_total"
+        android:textSize="@dimen/textSize_20"
+        app:layout_constraintEnd_toEndOf="@+id/answer_label_each_total"
+        app:layout_constraintTop_toBottomOf="@+id/answer_each_person" />
+
+    <TextView
+        android:id="@+id/answer_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_24"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_24"
+        app:layout_constraintStart_toEndOf="@+id/answer_label_total"
+        app:layout_constraintTop_toBottomOf="@+id/answer_each_person"
+        tools:text="$ 69" />
+
+    <TextView
+        android:id="@+id/answer_label_each_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginTop="@dimen/margin_24"
+        android:text="@string/answer_total_each"
+        android:textSize="@dimen/textSize_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_total" />
+
+    <TextView
+        android:id="@+id/answer_each_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_24"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_24"
+        app:layout_constraintStart_toEndOf="@+id/answer_label_each_total"
+        app:layout_constraintTop_toBottomOf="@+id/answer_total"
+        tools:text="$ 23" />
+</androidx.constraintlayout.widget.ConstraintLayout>
