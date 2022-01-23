@@ -2,7 +2,10 @@ package com.feiyatsu.tipcalculatorapp
 
 import android.animation.ArgbEvaluator
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -50,9 +53,18 @@ class MainActivity : AppCompatActivity() {
         attachListeners()
     }
 
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        currentFocus?.let { currFocus ->
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currFocus.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
     private fun attachListeners() {
         binding.sbTip.setOnSeekBarChangeListener(seekBarChangeListener)
-        binding.btCalculate.setOnClickListener {
+        binding.btnCalculate.setOnClickListener {
+
             println("billAmount= " + binding.etPrice.text.toString())
             println("people= " + binding.etPerson.text.toString())
 
@@ -75,6 +87,12 @@ class MainActivity : AppCompatActivity() {
             binding.answerTipEach.text = roundNum(tipEach)
             binding.answerTotal.text = roundNum(total)
             binding.answerTotalEach.text = roundNum(totalEach)
+        }
+        binding.btnClear.setOnClickListener {
+            binding.etPrice.setText(EMPTY_STRING)
+            binding.etPerson.setText(EMPTY_STRING)
+            binding.sbTip.progress = 0
+            binding.etPrice.requestFocus()
         }
     }
 

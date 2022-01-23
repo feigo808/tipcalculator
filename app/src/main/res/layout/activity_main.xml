@@ -116,7 +116,7 @@
         app:layout_constraintStart_toEndOf="@+id/tv_person" />
 
     <Button
-        android:id="@+id/bt_calculate"
+        android:id="@+id/btn_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_52"
@@ -126,13 +126,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_person_hint" />
 
     <Button
-        android:id="@+id/bt_clear"
+        android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_60"
         android:text="@string/clear"
-        app:layout_constraintStart_toEndOf="@+id/bt_calculate"
-        app:layout_constraintTop_toTopOf="@+id/bt_calculate" />
+        app:layout_constraintStart_toEndOf="@+id/btn_calculate"
+        app:layout_constraintTop_toTopOf="@+id/btn_calculate" />
 
     <View
         android:id="@+id/group_divider"
@@ -141,7 +141,7 @@
         android:layout_margin="@dimen/margin_24"
         android:background="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_calculate" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculate" />
 
     <TextView
         android:id="@+id/answer_label_tip"
