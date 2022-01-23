@@ -3,8 +3,8 @@
     <string name="price">Bill Amount : $</string>
     <string name="tip">Tip : %</string>
     <string name="person">Divide By :</string>
-    <string name="percent">%</string>
-    <string name="hint_price">Bill Price</string>
+    <string name="percent0">0 %</string>
+    <string name="poor">Poor</string>
     <string name="clear">Clear</string>
     <string name="calculate">Calculate</string>
     <string name="round_up">Round Up :</string>
@@ -14,4 +14,11 @@
     <string name="answer_each_person">Tip Each Person :</string>
     <string name="answer_total">Total (Bill + Tip) :</string>
     <string name="answer_total_each">Total Each Person :</string>
+    <string name="tipDescription_poor">Poor</string>
+    <string name="tipDescription_acceptable">Acceptable</string>
+    <string name="tipDescription_good">Good</string>
+    <string name="tipDescription_great">Great</string>
+    <string name="tipDescription_amazing">Amazing</string>
+    <string name="default_amount">0</string>
+    <string name="default_people">1</string>
 </resources>

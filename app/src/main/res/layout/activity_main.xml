@@ -19,14 +19,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_12"
-        android:ems="8"
-        android:hint="@string/hint_price"
+        android:ems="6"
+        android:hint="@string/default_amount"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_24"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_price"
         app:layout_constraintStart_toEndOf="@+id/tv_price" />
 
@@ -57,21 +59,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_28"
         android:layout_marginTop="@dimen/margin_8"
-        android:text="@string/percent"
-        android:textSize="@dimen/textSize_20"
+        android:text="@string/percent0"
+        android:textSize="@dimen/textSize_24"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/sb_tip"
         app:layout_constraintTop_toBottomOf="@+id/sb_tip"
         tools:text="0%" />
 
     <TextView
-        android:id="@+id/tv_tip_level"
+        android:id="@+id/tv_tip_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_28"
         android:layout_marginTop="@dimen/margin_8"
-        android:text="@string/percent"
+        android:text="@string/poor"
+        android:textColor="@color/red"
         android:textSize="@dimen/textSize_20"
+        android:textStyle="italic|bold"
         app:layout_constraintStart_toEndOf="@+id/tv_tip_percentage"
         app:layout_constraintTop_toBottomOf="@+id/sb_tip"
         tools:text="great" />
@@ -89,6 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tip_percentage" />
 
     <TextView
+        android:id="@+id/tv_person_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hint_person"
@@ -104,53 +109,30 @@
         android:ems="3"
         android:importantForAutofill="no"
         android:inputType="number"
+        android:text="@string/default_people"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_24"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_person"
         app:layout_constraintStart_toEndOf="@+id/tv_person" />
-
-    <TextView
-        android:id="@+id/tv_roundup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_32"
-        android:text="@string/round_up"
-        android:textSize="@dimen/textSize_20"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tv_price"
-        app:layout_constraintTop_toBottomOf="@+id/tv_person" />
-
-    <CheckBox
-        android:id="@+id/cb_roundup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_12"
-        android:layout_marginTop="@dimen/margin_12"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_roundup"
-        app:layout_constraintStart_toEndOf="@+id/tv_roundup" />
 
     <Button
         android:id="@+id/bt_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_52"
-        android:layout_marginTop="@dimen/margin_48"
+        android:layout_marginTop="@dimen/margin_40"
         android:text="@string/calculate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_roundup" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_person_hint" />
 
     <Button
+        android:id="@+id/bt_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_60"
         android:text="@string/clear"
         app:layout_constraintStart_toEndOf="@+id/bt_calculate"
         app:layout_constraintTop_toTopOf="@+id/bt_calculate" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hint_roundUp"
-        app:layout_constraintStart_toStartOf="@+id/tv_roundup"
-        app:layout_constraintTop_toBottomOf="@+id/tv_roundup" />
 
     <View
         android:id="@+id/group_divider"
@@ -166,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_32"
-        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_40"
         android:text="@string/answer_tip"
         android:textSize="@dimen/textSize_20"
         app:layout_constraintEnd_toEndOf="@+id/answer_label_each_total"
@@ -180,6 +162,7 @@
         android:layout_marginTop="@dimen/margin_24"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/answer_label_tip"
         app:layout_constraintStart_toEndOf="@+id/answer_label_tip"
         tools:text="$ 9" />
@@ -196,7 +179,7 @@
         app:layout_constraintTop_toBottomOf="@+id/answer_label_tip" />
 
     <TextView
-        android:id="@+id/answer_each_person"
+        android:id="@+id/answer_tip_each"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_8"
@@ -216,7 +199,7 @@
         android:text="@string/answer_total"
         android:textSize="@dimen/textSize_20"
         app:layout_constraintEnd_toEndOf="@+id/answer_label_each_total"
-        app:layout_constraintTop_toBottomOf="@+id/answer_each_person" />
+        app:layout_constraintTop_toBottomOf="@+id/answer_tip_each" />
 
     <TextView
         android:id="@+id/answer_total"
@@ -242,13 +225,14 @@
         app:layout_constraintTop_toBottomOf="@+id/answer_total" />
 
     <TextView
-        android:id="@+id/answer_each_total"
+        android:id="@+id/answer_total_each"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_8"
         android:layout_marginTop="@dimen/margin_24"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/answer_label_each_total"
         app:layout_constraintStart_toEndOf="@+id/answer_label_each_total"
         tools:text="$ 23" />
