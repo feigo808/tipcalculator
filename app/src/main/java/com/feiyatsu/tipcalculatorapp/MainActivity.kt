@@ -7,12 +7,11 @@ import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.feiyatsu.tipcalculatorapp.databinding.ActivityMainBinding
-import java.math.RoundingMode
-import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
     companion object {
         const val TAG = "MainActivity"
+        const val EMPTY_STRING = ""
     }
 
     private lateinit var binding: ActivityMainBinding
@@ -54,29 +53,32 @@ class MainActivity : AppCompatActivity() {
     private fun attachListeners() {
         binding.sbTip.setOnSeekBarChangeListener(seekBarChangeListener)
         binding.btCalculate.setOnClickListener {
-            val billAmount = roundNumUsingDecimalFormat(binding.etPrice.text.toString()).toFloat()
+            println("billAmount= " + binding.etPrice.text.toString())
+            println("people= " + binding.etPerson.text.toString())
+
+
+            val billAmount =
+                if (binding.etPrice.text.toString() == EMPTY_STRING) 0.00f
+                else binding.etPrice.text.toString().toFloat()
             val tipPercent = binding.sbTip.progress.toFloat() / 100
-            val peopleAmount = binding.etPerson.text.toString().toInt()
+            val peopleAmount =
+                if (binding.etPerson.text.toString() == EMPTY_STRING) 1
+                else binding.etPerson.text.toString().toInt()
 
             val tipTotal = billAmount * tipPercent
-            val tipEach = roundNumUsingDecimalFormat((tipTotal / peopleAmount).toString())
+            val tipEach = tipTotal / peopleAmount
             val total = billAmount + tipTotal
-            val totalEach = roundNumUsingDecimalFormat((total / peopleAmount).toString())
+            val totalEach = total / peopleAmount
 
             // Display
-            binding.answerTip.text = roundNumUsingDecimalFormat(tipTotal.toString())
-            binding.answerTipEach.text = roundNumUsingDecimalFormat(tipEach)
-            binding.answerTotal.text = roundNumUsingDecimalFormat(total.toString())
-            binding.answerTotalEach.text = roundNumUsingDecimalFormat(totalEach)
-
-//            println("tipTotal = $tipTotal, tipEach = $tipEach, total = $total, totalEach = $totalEach")
+            binding.answerTip.text = roundNum(tipTotal)
+            binding.answerTipEach.text = roundNum(tipEach)
+            binding.answerTotal.text = roundNum(total)
+            binding.answerTotalEach.text = roundNum(totalEach)
         }
     }
 
-    private fun roundNumUsingDecimalFormat(num: String): String {
-        val df = DecimalFormat("#.##")
-        df.roundingMode = RoundingMode.CEILING
-
-        return df.format(num.toFloat())
+    private fun roundNum(num: Float): String {
+        return String.format("%.2f", num)
     }
 }

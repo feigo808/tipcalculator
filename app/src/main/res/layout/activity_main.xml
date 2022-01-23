@@ -109,7 +109,7 @@
         android:ems="3"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:text="@string/default_people"
+        android:hint="@string/default_people"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_person"

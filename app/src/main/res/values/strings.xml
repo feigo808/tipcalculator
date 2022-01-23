@@ -10,10 +10,10 @@
     <string name="round_up">Round Up :</string>
     <string name="hint_person">how many people?</string>
     <string name="hint_roundUp">to whole dollars?</string>
-    <string name="answer_tip">Tip Total :</string>
-    <string name="answer_each_person">Tip Each Person :</string>
-    <string name="answer_total">Total (Bill + Tip) :</string>
-    <string name="answer_total_each">Total Each Person :</string>
+    <string name="answer_tip">Tip Total : $</string>
+    <string name="answer_each_person">Tip Each Person : $</string>
+    <string name="answer_total">Total (Bill + Tip) : $</string>
+    <string name="answer_total_each">Total Each Person : $</string>
     <string name="tipDescription_poor">Poor</string>
     <string name="tipDescription_acceptable">Acceptable</string>
     <string name="tipDescription_good">Good</string>
