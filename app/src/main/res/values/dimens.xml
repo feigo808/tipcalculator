@@ -13,6 +13,7 @@
     <dimen name="margin_60">60dp</dimen>
 
     <!-- Text Size -->
+    <dimen name="textSize_16">16sp</dimen>
     <dimen name="textSize_20">20sp</dimen>
     <dimen name="textSize_24">24sp</dimen>
 </resources>

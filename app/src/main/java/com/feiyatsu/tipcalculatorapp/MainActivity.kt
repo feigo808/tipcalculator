@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         attachListeners()
+        addWebView()
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
@@ -59,6 +60,14 @@ class MainActivity : AppCompatActivity() {
             imm.hideSoftInputFromWindow(currFocus.windowToken, 0)
         }
         return super.dispatchTouchEvent(ev)
+    }
+
+    private fun addWebView() {
+        val message: String =
+            "*** Icon Info: <a href=\"https://www.flaticon.com/free-icons/tip\" title=\"tip icons\">Tip icons created by Freepik - Flaticon</a> ***"
+        val mimeType: String = "text/html"
+        val utfType: String = "UTF-8"
+        binding.wvIconInfo.loadData(message, mimeType, utfType)
     }
 
     private fun attachListeners() {
@@ -100,3 +109,4 @@ class MainActivity : AppCompatActivity() {
         return String.format("%.2f", num)
     }
 }
+
