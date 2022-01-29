@@ -102,6 +102,10 @@ class MainActivity : AppCompatActivity() {
             binding.etPerson.setText(EMPTY_STRING)
             binding.sbTip.progress = 0
             binding.etPrice.requestFocus()
+            binding.answerTip.text = EMPTY_STRING
+            binding.answerTotal.text = EMPTY_STRING
+            binding.answerTotalEach.text = EMPTY_STRING
+            binding.answerTipEach.text = EMPTY_STRING
         }
     }
 

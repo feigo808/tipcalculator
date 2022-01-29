@@ -160,12 +160,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_8"
         android:layout_marginTop="@dimen/margin_24"
+        android:hint="@string/default_price"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/answer_label_tip"
-        app:layout_constraintStart_toEndOf="@+id/answer_label_tip"
-        tools:text="$ 9" />
+        app:layout_constraintStart_toEndOf="@+id/answer_label_tip" />
 
     <TextView
         android:id="@+id/answer_label_each_person"
@@ -184,11 +184,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_8"
         android:layout_marginTop="@dimen/margin_24"
+        android:hint="@string/default_price"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24"
         app:layout_constraintBaseline_toBaselineOf="@+id/answer_label_each_person"
-        app:layout_constraintStart_toEndOf="@+id/answer_label_each_person"
-        tools:text="$ 3" />
+        app:layout_constraintStart_toEndOf="@+id/answer_label_each_person" />
 
     <TextView
         android:id="@+id/answer_label_total"
@@ -207,11 +207,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_8"
         android:layout_marginTop="@dimen/margin_24"
+        android:hint="@string/default_price"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24"
         app:layout_constraintBaseline_toBaselineOf="@+id/answer_label_total"
-        app:layout_constraintStart_toEndOf="@+id/answer_label_total"
-        tools:text="$ 69" />
+        app:layout_constraintStart_toEndOf="@+id/answer_label_total" />
 
     <TextView
         android:id="@+id/answer_label_each_total"
@@ -230,12 +230,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_8"
         android:layout_marginTop="@dimen/margin_24"
+        android:hint="@string/default_price"
         android:textColor="@color/black"
         android:textSize="@dimen/textSize_24"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/answer_label_each_total"
-        app:layout_constraintStart_toEndOf="@+id/answer_label_each_total"
-        tools:text="$ 23" />
+        app:layout_constraintStart_toEndOf="@+id/answer_label_each_total" />
 
     <View
         android:id="@+id/group_divider2"
